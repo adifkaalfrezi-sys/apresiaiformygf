@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 30px 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      animation: fadeIn 2s;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: slideUp 1.5s;
+    }
+
+    button {
+      background: #ff4d6d;
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ff1e56;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    audio {
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity:0;}
+      to {transform: translateY(0); opacity:1;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>💖 Apresiasi Hari Ini 💖</h1>
+
+    <!-- TEKS UTAMA -->
+    <div class="card">
+      <p>
+        aku bangga sama kamu hari ini karena udah bisa maju kedepan,  
+        tingkatin ya sayanggg 🤍  
+        <br><br>
+        web kecil ini buat apresiasi kamu hari ini 🌸
+      </p>
+    </div>
+
+    <!-- HITUNG HARI (OPSIONAL) -->
+    <div class="card">
+      <h3>⏳ Hari spesial ini tercatat</h3>
+      <p id="hari"></p>
+    </div>
+
+    <!-- TOMBOL KEJUTAN -->
+    <div class="card">
+      <button onclick="kejutan()">💌 Klik ini</button>
+      <p id="pesan" class="hidden"></p>
+    </div>
+
+    <!-- MUSIK -->
+    <div class="card">
+      <h3>🎵 Lagu kecil</h3>
+      <audio controls loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung audio.
+      </audio>
+    </div>
+
+    <footer>
+      dibuat dengan 💕
+    </footer>
+  </div>
+
+  <script>
+    // tanggal hari ini
+    const tanggal = new Date();
+    document.getElementById("hari").innerText =
+      tanggal.toDateString();
+
+    function kejutan() {
+      const pesan = document.getElementById("pesan");
+      pesan.classList.remove("hidden");
+      pesan.innerHTML = `
+        aku cinta banget sama kamu 💖<br>
+        semoga kita sama terus 🤍<br>
+        i lovee u.
+      `;
+    }
+  </script>
+
+</body>
+</html>
